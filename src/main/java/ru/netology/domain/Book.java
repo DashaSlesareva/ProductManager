@@ -1,4 +1,4 @@
-package ru.netolody.domain;
+package ru.netology.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
