@@ -109,4 +109,29 @@ public class ProductManagerTest {
         Product[] expected = {book1, book2,smartphone1, smartphone2};
         Assertions.assertArrayEquals(actual, expected);
     }
+    @Test
+    public void managerSearhByBookTest() {
+        ProductRepo repo = new ProductRepo();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smartphone1);
+        manager.add(smartphone2);
+        Product[] actual = manager.searchBy("ev");
+        Product[] expected = {book1};
+        Assertions.assertArrayEquals(actual, expected);
+    }
+    @Test
+    public void managerSearhBySmartphoneTest() {
+        ProductRepo repo = new ProductRepo();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smartphone1);
+        manager.add(smartphone2);
+        Product[] actual = manager.searchBy("pp");
+        Product[] expected = {smartphone1};
+        Assertions.assertArrayEquals(actual, expected);
+    }
+
 }
